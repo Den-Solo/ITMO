@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS TABLES</title>
+    <style>
+    input{
+        margin-bottom: 5px;
+    }
+    td, tr {
+        padding: 15px;
+        border: 1px solid grey;
+        min-width: 150px;
+        min-height: 100px;
+    }
+    /*function div container*/
+    #func {
+        display: none;
+        flex-wrap: wrap;
+    }
+    .fplace {
+        background-color: silver;
+        padding: 10px;
+        text-align: center;
+        margin: 1px;
+    }
+    table {
+        border: solid;
+        border-width: 1px;
+    }
+    /*tableContainer*/
+    #table{
+        text-align: center;
+    }
+    </style>
+    <script>
+        function randomInteger(min, max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function CreateTable(){
+            // получаем значения и скрываем форму
+            let rows = document.getElementById("rows").value;
+            let cols = document.getElementById("cols").value;
+            document.getElementById("f1").style.display = "none";
+            // показываем блок функций
+            document.getElementById('func').style.display = 'flex';
+            // создаем таблицу
+            let table = document.createElement('table');
+            for (let i = 0; i<= rows; i++){
+                let tr = document.createElement('tr');
+                if ( i != 0){
+                    for (let j = 0; j < cols; j++){
+                        let td = document.createElement('td');
+                        let textarea = document.createElement('textarea');
+                        let button = document.createElement("input");
+                        button.type = "button";
+                        button.value = "Сохранить";
+                        button.onclick = function(){
+                            let td = button.parentNode;
+                            let text  = td.childNodes[0].value;    
+                            td.innerHTML = text;                
+                        }
+                        td.appendChild(textarea);
+                        td.appendChild(document.createElement('br'));
+                        td.appendChild(button);
+                        tr.appendChild(td);
+                    }
+                }else{
+                    let th = document.createElement('th');
+                    th.colSpan = cols;
+                    tr.appendChild(th);
+                    tr.style.display = "none";
+                }
+                table.appendChild(tr);
+            }
+            document.getElementById('table').appendChild(table);
+    
+        }
+        function ChangeBorders(){
+            let inputValue = document.getElementById("frameWidth").value;
+            let selectValue = document.getElementById("select1").value;
+
+            let table = document.getElementById('table').childNodes[0];
+            table.style.border = selectValue;
+            table.style.borderWidth = inputValue + 'px';
+        }
+        function AddHeader(){
+            let inputValue = document.getElementById("inHeader").value;
+            let header = document.getElementsByTagName("th");
+            header[0].innerHTML = inputValue;
+            header[0].parentNode.style = "block";
+        }
+        function DelRow(){
+            let inputValue = document.getElementById("inDelRow").value;
+            let table = document.getElementById('table').childNodes[0];
+            if (table.childNodes.length - 1 < inputValue || inputValue < 1){
+                alert("нет такой строки");
+            }else{
+                table.childNodes[inputValue].remove();
+                if (table.childNodes.length == 1){
+                    table.childNodes[0].remove();
+                }
+            }
+        }
+        function DoMagic(){
+            let table = document.getElementById('table').childNodes[0];
+            let row = table.childNodes[randomInteger(1, table.childNodes.length - 1)];
+            let td = row.childNodes[randomInteger(0, row.childNodes.length - 1)];
+            let randnum = randomInteger(0, 1);
+            
+            if (randnum == 0){
+                // случайный цвет для фона
+                let randColor = randomInteger(0, 0xFFFFFF);
+                let color = randColor.toString(16);
+                while (color.length < 6){
+                    color = 'A' + color;
+                }
+                td.style.background = '#'+color;
+                // случайный цвет для текста
+                randColor = randomInteger(0, 0xFFFFFF);
+                color = randColor.toString(16);
+                while (color.length < 6){
+                    color = 'F' + color;
+                }
+                td.style.color = '#'+color;
+                // размер шрифта
+                let randSize = randomInteger(15,25);
+                td.style.fontSize = randSize+'px';
+            }else{
+                // все удаляем и возвращаем текстовое поле
+                let textarea = document.createElement('textarea');
+                let button = document.createElement("input");
+                button.type = "button";
+                button.value = "Сохранить";
+                button.onclick = function(){
+                    let td = button.parentNode;
+                    let text  = td.childNodes[0].value;    
+                    td.innerHTML = text;                
+                }
+                td.innerHTML = "";
+                td.appendChild(textarea);
+                td.appendChild(document.createElement('br'));
+                td.appendChild(button);
+            }
+        }
+        function DelTable(){
+            let table = document.getElementById('table').childNodes[0];
+            table.remove();
+            document.getElementById("f1").style.display = "block";
+            document.getElementById('func').style.display = 'none';
+        }
+    </script>
+</head>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////-->
+<!-- /////////////////////////////////////////////////////////////////////////////////////////-->
+<!-- /////////////////////////////////////////////////////////////////////////////////////////-->
+<!-- /////////////////////////////////////////////////////////////////////////////////////////-->
+<body>
+    <form id="f1">
+        <span>Введите количество строк и столбцов таблицы</span><br>
+
+        <input type="number" name="rows" id="rows" placeholder="number of rows"><br>
+        <input type="number" name="cols" id="cols" placeholder="number of columns"><br>
+        <input type="button" onclick="CreateTable()" value="Создать таблицу">
+    </form>
+    <div id="func">
+        <div class="fplace" id="ChangeBorders">
+            <p>Изменить границы таблицы</p>
+            <input type="number" id="frameWidth" placeholder="ширина в px" max="999">
+            <br>
+            <select id="select1" name="frameType" >
+                <option value="e" disabled selected hidden>Тип границы</option>                
+                <option value="dotted">dotted</option>
+                <option value="dashed">dashed</option>
+                <option value="solid">solid</option>
+                <option value="double">double</option>
+                <option value="groove">groove</option>
+                <option value="ridge">ridge</option>
+                <option value="inset">inset</option>
+                <option value="outset">outset</option>
+            </select>
+            <br>
+            <button id="func1" onclick="ChangeBorders()">Применить</button>
+            <script>
+                // получаем элементы
+                let button = document.getElementById("func1");
+                let input = document.getElementById("frameWidth");
+                let select = document.getElementById("select1");
+                // переменные для значений input и select
+                let inputValue = "";
+                let selectValue = "";
+                
+                input.addEventListener('input', function (evt) {
+                     inputValue = this.value;
+                     button.innerHTML = "Применить " + inputValue + 'px '+ selectValue;
+                });
+                select.addEventListener('change', function (evt) {
+                     selectValue = this.value;
+                     button.innerHTML = "Применить " + inputValue + 'px ' + selectValue;
+                });
+               
+            </script>
+        </div>
+        <div class="fplace" id="AddHeader">
+            <p>Добавить заголовок</p>
+            <input type="text" id="inHeader" placeholder="заголовок" ><br>
+               
+            <button id="func1" onclick="AddHeader()">Добавить</button>
+               
+        </div>
+        <div class="fplace" id="DeleteRow">
+                <p>Удалить строку</p>
+                <input type="number" id="inDelRow" placeholder="номер строки" ><br>
+                   
+                <button id="func1" onclick="DelRow()">Удалить</button>
+                   
+        </div>
+        <div class="fplace" id="RandomChoice">
+                <p>Случайный выбор</p>   
+                <button id="func1" onclick="DoMagic()">Magic</button>
+        </div>
+        <div class="fplace" id="Delete">
+                <p>Удалить таблицу</p>   
+                <button id="func1" onclick="DelTable()">Удалить</button>
+        </div>
+    </div>
+    <br>
+    
+    <div id="table"></div>
+    <div id="debug"></div>
+
+</body>
+</html>

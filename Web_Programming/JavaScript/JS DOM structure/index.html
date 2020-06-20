@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      input{
+        background-color: #FBDCFE;
+        padding: 10px;
+        border-radius: 10px;
+        outline: none;
+      }
+      #i1 {
+        height: 5em;
+        width: 5em;
+      }
+      #i2 {
+        height: 6em;
+        width: 6em;
+      }
+      button{
+        padding: 15px;
+        background-color:#DDD4DE;
+        border-radius: 20px;
+        outline: none;
+      }
+      button img{
+        align-content: left;
+        width: 20px;
+        height: 20px;
+      }
+      button span{
+        margin-left: 5px;
+        color: black;
+        font-size: 17px;
+        font-family: cursive;
+      }
+      button:hover{
+        background-color: #D6E9ED;
+        box-shadow: 0 0 1px black;
+      }
+      table {
+         border: 1px solid BLACK;
+      }
+
+      td, th {
+        padding: 10px;
+        border: 2px solid grey;
+      }
+    </style>
+
+  </head>
+    <!-- ///////////////////////////////TASK 1////////////////////////////////////////////// -->
+    <!-- //////////////////////////////TASK 1/////////////////////////////////////////////// -->
+    <!-- //////////////////////////////TASK 1/////////////////////////////////////////////// -->
+  <body>
+    ---------------------TASK_1-----------------------------------------------<br>
+    <script type="text/javascript">
+      document.write("<span>Hello World</span><br>");
+      txt = document.getElementsByTagName('span')[0].innerHTML;
+      document.write("букв: "+ txt.length + " слов: " + txt.split(' ').length);
+    </script>
+    <br><br>
+    <!-- отдельно протокол жирным -->
+      <script type="text/javascript">
+       document.write('<b>' + window.location.protocol + '</b>' + '/');
+       //делим путь на элементы через split и выводим, кроме последнего
+       let arr = window.location.pathname.split('/');
+       for (let i = 0; i < arr.length - 1; i++){
+         document.write(arr[i] + '/');
+       }
+       //<!-- имя файла жирным -->
+       document.write('<b>' + arr[arr.length - 1] + '</b><br>');
+       //<!-- сделаем объект из параметров (нужен GET request) -->
+       let params = window.location.search.split('=');
+       let SearchParams = {
+         name : params[0].slice(1),
+         value : params[1],
+       };
+       document.write("Параметры запроса: параметр: <b>" + SearchParams.name + '</b> значение: <b>' +SearchParams.value + "</b><br><br>");
+    </script>
+
+---------------------TASK_2-----------------------------------------------<br>
+<!-- /////////////////////////////////TASK 2/////////////////////////////////////////// -->
+<!-- //////////////////////////////////TASK 2/////////////////////////////////////////// -->
+<!-- ////////////////////////////////TASK 2///////////////////////////////////////////// -->
+
+<a name="a1">1 anchor</a><br>
+<a name="a2">2 anchor</a><br>
+<a name="a3">3 anchor</a><br>
+<a name="a4">4 anchor</a><br>
+<a href="link1">1 link</a><br>
+<a href="link2">2 link</a><br>
+<!-- картинки -->
+<img id="i1" src="https://klike.net/uploads/posts/2019-03/medium/1551512888_2.jpg" alt="asd">
+<img id="i2" src="https://klike.net/uploads/posts/2019-03/medium/1551512888_2.jpg" alt="ads">
+<br>
+<script type="text/javascript">
+  document.write("количество якорей: " + document.anchors.length + "<br>");
+  document.write("количество ссылок: " + document.links.length + "<br>");
+  document.write("содержимое первого якоря: " + document.anchors[0].innerHTML + "<br>");
+  document.write("количество картинок: " + document.images.length+ "<br>");
+  document.write("ширина первой картинки: " + document.images[0].width+ "px<br>");
+  let max_width = 0;
+  for (let i = 0; i < document.images.length; i++){
+    if(document.images[i].width > max_width){
+      max_width = document.images[i].width;
+    }
+  }
+  document.write("ширина самой широкой картинки: " + max_width+ "px<br>");
+  let sum_heights = 0;
+  for (let i = 0; i < document.images.length; i++){
+    sum_heights += document.images[i].height;
+  }
+  document.write("сумма высот картинок: " + sum_heights+ "px<br>");
+</script>
+<br>
+---------------------TASK_3-----------------------------------------------<br>
+<!-- /////////////////////////////////TASK 3/////////////////////////////////////////// -->
+<!-- //////////////////////////////////TASK 3/////////////////////////////////////////// -->
+<!-- ////////////////////////////////TASK 3//////////////////////////////////////////// -->
+<div id="FormContainer"></div>
+
+<script>
+  // добавим формы
+  for (let i = 0; i < 10; i++){
+    let form = document.createElement('form');
+    form.id = 'f' + i;
+    form.action = 'index.html';
+    form.method = 'post';
+    document.getElementById('FormContainer').appendChild(form);
+    document.getElementById('FormContainer').appendChild(document.createElement('br'));
+  }
+</script>
+<script>
+ document.write('имена четных форм: ');
+  let forms = document.forms;
+  for (let i = 0; i < forms.length; i+=2){
+    document.write(forms[i].id + ', ');
+  }
+  document.write('<br>');
+
+  for (let i = 0; i < forms.length; i++){
+  //<!-- Добавим input -->
+    let container = forms[i];
+
+    //<!-- Добавим input name и lastname -->
+  for (let j = 0; j < 2; j++){
+      let input = document.createElement("input");
+      input.type = "text";
+      if (j == 0 && i < 5){
+        input.name = "name"+i;
+        input.placeholder = "Name " + i;
+      }else if ( j == 1 ){
+        input.name = "lastname " + i;
+        input.placeholder = "Lastname " + i;
+      }else {
+        input.name = "text " + i;
+        input.placeholder = "text " + i;
+      }
+      container.appendChild(input);
+      container.appendChild(document.createElement("br"));
+  }
+
+       // <!-- Добавим input password -->
+        if (i <4){
+    input = document.createElement("input");
+    input.type = "password";
+    input.name = "pass"+i;
+    input.placeholder = "password " + i;
+    container.appendChild(input);
+    container.appendChild(document.createElement("br"));
+  }
+}
+
+//<!-- Добавление кнопок -->
+//<!-- Добавьте в каждую форму кнопку “Показать имя формы” -->
+for (let i = 0; i < forms.length; i++){
+  let button = document.createElement("button");
+  button.type = "button";
+  button.className = "ShowName";
+  button.name = "submit" + i;
+
+ // <!-- добавление картинки в кнопку -->
+  let img = document.createElement('img');
+  img.src = "1.png";
+  button.appendChild(img);
+  let p = document.createElement("span");
+  p.innerHTML = "Показать имя формы";
+  button.appendChild(p);
+  button.onclick = function(){alert('Текст на кнопке: '+p.innerHTML);};
+
+  forms[i].appendChild(button);
+  forms[i].appendChild(document.createElement("br"));
+}
+//<!-- Добавьте в каждую форму кнопку “Принадлежность” -->
+for (let i = 0; i < forms.length; i++){
+  let button = document.createElement("button");
+  button.type = "button";
+  button.className = "Belong";
+  button.name = "SHOWID" + i;
+  button.id = "button" + i;
+ // <!-- добавление картинки в кнопку -->
+  let img = document.createElement('img');
+  img.src = "2.png";
+  button.appendChild(img);
+  let p = document.createElement("span");
+  p.innerHTML = "Принадлежность";
+  button.appendChild(p);
+  button.onclick = function(){alert('id = '+button.form.id);};
+  forms[i].appendChild(button);
+  forms[i].appendChild(document.createElement("br"));
+}
+//<!-- Добавьте в каждую форму кнопку “Сброс” -->
+for (let i = 0; i < forms.length; i++){
+  let button = document.createElement("button");
+  button.type = "button";
+  button.className = "Reset";
+  button.name = "Clear" + i;
+  button.id = "Clear" + i;
+
+  button.onclick = function(){button.form.reset();};
+  //<!-- добавление картинки в кнопку -->
+  let img = document.createElement('img');
+  img.src = "3.png";
+  button.appendChild(img);
+  let p = document.createElement("span");
+  p.innerHTML = "Сброс";
+  button.appendChild(p);
+  forms[i].appendChild(button);
+  forms[i].appendChild(document.createElement("br"));
+}
+//<!-- Добавьте в каждую форму кнопку “количество полей” -->
+for (let i = 0; i < forms.length; i++){
+  let button = document.createElement("button");
+  button.type = "button";
+  button.className = "NumOfBut";
+  button.name = "numOfbut" + i;
+  button.id = "numOfbut" + i;
+ // <!-- добавление картинки в кнопку -->
+  let img = document.createElement('img');
+  img.src = "4.png";
+  button.appendChild(img);
+  let p = document.createElement("span");
+  p.innerHTML = "Количество полей";
+  button.appendChild(p);
+  button.onclick = function(){alert("количество полей в форме: " + button.form.getElementsByTagName('input').length);};
+  forms[i].appendChild(button);
+  forms[i].appendChild(document.createElement("br"));
+}
+</script>
+<br>
+---------------------TASK_4-----------------------------------------------<br>
+<!-- /////////////////////////////////TASK 4/////////////////////////////////////////// -->
+<!-- //////////////////////////////////TASK 4/////////////////////////////////////////// -->
+<!-- ////////////////////////////////TASK 4//////////////////////////////////////////// -->
+<a href="link1">link 1</a><br>
+<a href="link2">link 1</a><br>
+<a href="link3">link 1</a><br>
+<a href="link4">link 1</a><br>
+<a href="link5">link 1</a><br>
+<a href="link6">link 6</a><br>
+<a href="link7">link 7</a><br>
+<a href="link8">link 8</a><br>
+<a href="link9">link 9</a><br>
+<a href="link10">link 10</a><br>
+<br>
+<div id = "tableContainer"></div>
+
+  <script>
+    let map = {};
+    function addValueToKey(key, value) {
+    map[key] = map[key] || [];
+    map[key].push(value);
+    }
+    // проходим по ссылкам и добавляем их в объект map(ключ, массив)
+    
+    for (let  i of document.links ){
+      addValueToKey(i.innerHTML, i.href);
+    }
+
+    let container = document.getElementById('tableContainer');
+    let tbl = document.createElement('table');
+    // заполняем таблицу
+    for (let i in map){
+      let tr = document.createElement('tr');
+      
+        let td1 = document.createElement('td');
+        let td2 = document.createElement('td');
+        let td3 = document.createElement('td');
+        {
+          td1.innerHTML = i;
+          tr.appendChild(td1);
+        
+          td2.innerHTML = map[i].length;
+          tr.appendChild(td2);
+        
+          td3.innerHTML = map[i];
+          tr.appendChild(td3);
+        }
+      tbl.appendChild(tr);
+    } 
+    container.appendChild(tbl);
+  </script>
+   
+  </body>
+</html>

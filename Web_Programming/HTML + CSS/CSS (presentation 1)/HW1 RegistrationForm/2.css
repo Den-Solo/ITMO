@@ -1,0 +1,33 @@
+table.t1{
+  width: 100%;
+  border: 2px solid grey;
+  border-collapse: collapse;
+  align: center;
+  padding: 0em;
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+tr, td{
+  border: 1px solid grey;
+  align-content:  center;
+}
+
+ul {
+  text-align: left;
+}
+li{
+  padding-top: 1em;
+}
+
+.btn_1{
+  width: 15em;
+  padding: 0.4em;
+  background-color: #3df;
+box-shadow: 0 0 10px white;
+  color: white;
+  font-size: 1.5em;
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+.btn_1:hover{
+    background-color: #3ce;
+}

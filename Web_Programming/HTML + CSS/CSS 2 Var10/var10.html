@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VAR_10</title>
+    <style>
+       
+    </style>
+    <script>      
+         function randomInteger(min, max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function DoSmth(){
+            alert();
+        }
+        
+        function MakeFun(){
+            randColor = randomInteger(0, 0xFFFFFF);
+            color = randColor.toString(16);
+            while (color.length < 6){
+                color = 'F' + color;
+            }
+            let randnum = randomInteger(0, 5);
+            if (randnum == 0){
+            document.getElementById("HeaderContainer").style.background = "#"+color;
+            }else if (randnum == 1){
+                document.getElementById("FooterContainer").style.background = "#"+color;
+            }else if (randnum > 2){
+               document.getElementById("BlockContainer").children[randnum - 3].style.background = "#"+color;
+            }            
+        }
+    </script>
+    <style>
+        *{
+            margin: 0;
+        }
+        body {
+            padding-top: 60px;
+        }
+        a{
+            text-decoration: none;
+        }
+        
+        #HeaderContainer{
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 15px;
+            background-color: #FE522D;
+            width: 100%;
+            flex-direction: row;
+            z-index: 100;
+            overflow: hidden;
+        }
+        #HeaderContainerBack{
+            opacity: 1;
+            background-color: black;
+        }
+        .header{
+            min-width: 200px;
+            padding: 0 20px;
+            flex-grow: 1;
+            text-align: center;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 2em;
+        }
+        #MainContainer{
+           width: 100%;
+           position: relative;
+        }
+        #Menu{
+            position: relative;
+            float: right;
+            right: 4vw;
+            top: 5.2em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:  blueviolet;
+            background: cornflowerblue;
+            padding: 1em;
+            font-size: 1.3em;
+            height: 250px;
+            z-index: 100;
+        }
+        #Menu a:hover{
+            color: black;
+        }
+        #BlockContainer{
+            margin: auto;
+            width: 90%;
+            height: 38em;
+        }
+        /*блок с картинкой*/
+        #BlockContainer div:nth-of-type(1){
+            position: absolute;
+            top: 0em;
+            left: 14vw;
+            height: 200px;
+            width: 250px;
+            background: black;
+            margin: 50px;
+            text-align: center;
+            z-index: 1;
+        }
+        
+        #BlockContainer div:nth-of-type(1) img{
+            position: relative;
+            top: 12.5%;
+            height: 150px;
+            width: 200px;
+            margin: auto;
+        }
+        /*блок зеленый*/
+        #BlockContainer div:nth-of-type(2){
+            position: absolute;
+            top: 9em;
+            left: 28vw;
+            height: 300px;
+            width: 350px;
+            background:lawngreen;
+            padding-left: 30px;
+            padding-top: 30px;
+            text-align: center;
+            z-index: 2;
+        }
+        /*блок с textarea*/
+        #BlockContainer div:nth-of-type(3){
+            position: absolute;
+            top: 24em;
+            right: 10vw;
+            height: 150px;
+            width: 45vw;
+           
+            text-align: center;
+            background:lightcoral;
+            overflow: hidden;
+            z-index: 3;
+        }
+        textarea{
+            margin: 20px;;
+        }
+        #FooterContainer{
+            width: 100%;
+            height: 7em;
+            background: #FE2;
+            z-index: 100;
+        }
+        #Rights{
+            padding-top: 5em;
+            padding-left: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div id="HeaderContainer">
+        <div class="header">
+            Logo
+        </div>
+        <div class="header">
+            Web-site name
+        </div>
+        <div class="header">
+            <a href="" onclick="DoSmth()">Something else</a>
+        </div>
+        
+    </div>
+
+     <div id="MainContainer">
+        <div id="Menu">
+            <nav>
+            <a href="">News</a><br>
+            <a href="">Messages</a><br>
+            <a href="">Stories</a><br>
+            <a href="">Games</a><br>
+            <a href="">Pictures</a><br>
+            <a href="">Quit</a>
+            </nav>
+        </div>
+        <div id="BlockContainer">
+            <div class="mainDiv" >
+               <img src="1.jpg" alt="none">
+            </div>
+            <div class="mainDiv">
+                    Дни поздней осени бранят обыкновенно,<br>
+                    Но мне она мила, читатель дорогой,<br>
+                    Красою тихою, блистающей смиренно.<br>
+                    Так нелюбимое дитя в семье родной<br>
+                    К себе меня влечет. Сказать вам откровенно,
+            </div>
+            <div class="mainDiv">
+                <textarea name="sometext" id="tarea" cols="30" rows="4"></textarea>
+                <br><button onclick="MakeFun()">DoFun</button>
+            </div>
+        </div>
+        
+    </div>
+    <div id="FooterContainer">
+        <p id="Rights">All rights reserved @ Соловьев Денис</p>
+    </div>
+</body>
+</html>

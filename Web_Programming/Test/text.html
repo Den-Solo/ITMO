@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+    <form id="TestForm"action="file.php" method="POST">
+        <input type="text" name="name" id="name"><br>
+        <input type="password" id="pswd"><br>
+        <select name="Sel1" id="sel">
+            <option value="Moscow">moscow</option>
+            <option value="SPb">spb</option>
+        </select><br>
+        <button type="button" onclick="check()">Submit</button>
+    </form>
+    <script>
+        function capitalizeFirstLetter(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+        
+        let once = true;
+        $("#sel").click(function(){
+            $(this).css({
+                fontStyle:  "italic",
+            });
+            $("#sel" + ' option:first-letter').css({
+                color:  "red",
+            });
+            // большой обходной путь, но по псевдоселектору ::first-letter через css не вышло
+            // 
+            if (once) {
+                for (let i = 0; i < 2; i++){
+                    let $option = $("option").eq(i); 
+                    let $str = $option.html();
+                    let $firstLetter = $str.charAt(0).toUpperCase();
+                    
+                    $option.empty();
+                    $('<span>',{
+                        text: $firstLetter,
+                        css:{
+                            color: '#00F',
+                            fontSize: "30px",
+                        }
+                    }).appendTo($option);
+                                
+                    $option.append($str.substr(1));
+                    once = false;
+                }
+            }
+        })
+        function check(){
+            var letters= new RegExp('[A-z]');
+            var numbers = new RegExp('[0-9]');
+            if (!$('#name').val()){
+                alert('заполните имя');
+            } else if ($('#pswd').val().length  < 8){
+                alert('короткий пароль');
+            } else if (!($('#pswd').val().match(letters) 
+                &&   $('#pswd').val().match(numbers))){
+                    alert('нужно использовать цифры и буквы');
+            }else{
+                alert('Submit is OK');
+            }
+            // then send to server ...
+        }
+    </script>
+</body>
+</html>

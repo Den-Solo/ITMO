@@ -1,0 +1,246 @@
+<!--
+    JQuery
+    $ == JQuery
+    $(seclector).method();
+    $("p") тэг
+    $(".par") class
+    $("#par") Id
+    $(this) current element
+    Методы в JQ
+    1- AJAX
+    2- оформление
+    3 - DOM
+    4 - эффекты
+    5 - listeners
+    $("").html()("новое содержимое")
+    append()
+    prepend()
+    attr("атрибут", "нов знач") получить содержиоме атрибута
+
+    эффекты
+    fadeOut()
+    fadeIn(скорость, функция)
+    slideUp()
+
+    Ajax $("").load(url, data, function)
+
+    запросы 
+    $.ajax({
+        type: "POST",
+        url: "file.php",
+        data: {name: "Ivan"},
+        success: function(msg){
+            alert("OK");
+        }
+    });
+
+           //    $("<button>", {
+        //        text: 'update',
+        //        css: {
+        //            color: 'white',
+        //            background: 'black',
+        //        },
+        //        id: 'update',
+        //        on: {
+        //            click: update(),
+        //        },
+        //    })
+        //    .appendTo('body');
+       //     });
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Some Title</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        #result{
+            border: 2px solid black;
+        }
+        #jsonResult{
+            border: 2px solid black;
+        }
+        fieldset {
+            display: inline-block;
+        }
+        a{
+            text-decoration: none;
+            color:blueviolet;
+        }
+        a:hover{
+            color: rgb(58, 23, 90);
+        }
+        a:active{
+            text-shadow: 0 0 3px black;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            // CSS, atr, prop
+            $("p").css("color", "red");
+            $("#table1").css('border', '3px solid black');   
+            $("td").css({
+                padding: "25px",
+                fontSize: "25px",
+                border: '1px solid green',
+            });
+            $("td, tr").css("color", 'blue');
+            
+            // добавление эмоджи и открытие ссылок с новой вкладки
+            $("a").prepend("<span class='emoji'>↗</span>");
+            $("a").attr("target", "_blank" );
+            $("a").each(function() {
+                $(this).attr("href", $(this).attr("href").replace("http://", "https://"));
+            });
+            //  добавление кнопки для отмены верхнего пункта
+        
+            $("<button>", {
+                    text: 'cancel',
+                    id: 'btn',
+                    title: "cancel everything",
+                    css: {
+                        color: 'white',
+                        background: 'black',
+                        position: 'absolute',
+                        top: '10px',
+                        right: '10px'
+                    },
+                    on: {
+                            click: function(){
+                                $(".emoji").remove();
+                                $("a").removeAttr("target");
+                        },
+                    },
+            }).appendTo('body');
+    
+            // disable form
+            $("form").children().prop("disabled", true);
+
+            // functions for animation table
+            $('#FadeOut').click(function(){
+                $(this).closest('tr').children().eq(0).children().fadeOut(1000);
+            });
+            $('#FadeIn').click(function(){
+                $(this).closest('tr').children().eq(0).children().fadeIn(1000);
+            });
+            $('#slideUp').click(function(){
+                $(this).closest('tr').children().eq(0).children().slideUp(1000);
+            });
+            $('#slideDown').click(function(){
+                 $(this).closest('tr').children().eq(0).children().slideDown(1000);
+            });
+            $('#toggle').click(function(){
+                $(this).closest('tr').children().eq(0).children().toggle(1000);
+            });
+
+            // добавление кнопок update и get JSON и div'ы для них
+            $('<p>',{ text: 'результат по ссылке: https://inxaoc.github.io/example/ajax-1.html', }).appendTo('body');
+            $('<div>',{  id: 'result', }).appendTo('body');
+            $('<button>', {
+                id: "update",
+                text: 'update',
+                on: {
+                    click: update,
+                    }
+                }
+            ).appendTo('body');
+            $('<p>',{ text: 'результат JSON: https://inxaoc.github.io/example/ajax.json', }).appendTo('body');
+            $('<div>',{  id: 'jsonResult', }).appendTo('body');
+            // getJSON
+            $('<button>', {
+                id: "json1",
+                text: 'GetJSON',
+                on: {
+                    click: json1,
+                    }
+                }
+            ).appendTo('body');            
+        });
+        
+        function update(){
+            $.get( "https://inxaoc.github.io/example/ajax-1.html", function( data ) {
+                 $( "#result" ).html( data );
+                console.log( "Load was performed." );
+            });
+        }
+        function ParseInnerObj(data){
+            let buffer = "";
+            $.each(data, function(key, value){
+                buffer +=  '<li>' + key + ': </li>';
+                if ($.isPlainObject(value)){
+                    buffer += '<ul>' + ParseInnerObj(value) + '</ul>';
+                }else if ($.isArray(value)){
+                    buffer+= '<ul>';
+                    $.each(value, function(index, value){
+                        buffer+='<li>' + value + '</li>';
+                    })
+                    buffer+= '</ul>';
+                }
+                else{
+                  buffer += '<ul><li>' + value + '</li></ul>';
+                }
+            })
+            return buffer;
+        }
+        function json1(){
+            $.getJSON( "https://inxaoc.github.io/example/ajax.json", function( result ) {
+                let myJSON = result;
+                $('#jsonResult').html(ParseInnerObj(myJSON));
+            });
+        }        
+    </script>
+</head>
+<body>
+    <p class="par">Hello</p>
+    <p class="par">World</p>
+    <a href="http://saddsa.ru">hello_0</a><br>
+    <a href="http://saddsa.ru">hello_1</a><br>
+    <a href="http://saddsa.ru">hello_2</a><br>
+    <a href="http://saddsa.ru">hello_3</a><br>
+    <a href="http://saddsa.ru">hello_4</a><br>
+    <table id="effects">
+            <tr>
+                <td><span>Текст</span></td>
+                <td>Эффект/анимация</td>
+            </tr>
+            <tr>
+                <td><span>Текст</span></td>
+                <td><button id="FadeOut">FadeOut</button></td>
+            </tr>
+            <tr>
+                <td><span style="display: none;">Текст</span></td>
+                <td><button id="FadeIn">FadeIn</button></td>
+            </tr>
+            <tr>
+                <td><span>Текст</span></td>
+                <td><button id="slideUp">slideUp</button></td>
+            </tr>
+            <tr>
+                <td><span style="display: none;">Текст</span></td>
+                <td><button id="slideDown">slideDown</button></td>
+            </tr>
+            <tr>
+                <td><span>Текст</span></td>
+                <td><button id="toggle">toggle</button></td>
+            </tr>
+        </table>
+    <br>
+    <fieldset>
+        <legend>Some form</legend>
+        <form action="POST" id="F1">
+            <input type="text" name="" id="in1" placeholder="name"><br>
+            <input type="password" name="" id="pswd1" placeholder="pswd">
+        </form>
+    </fieldset>
+    <br>
+
+   <b> ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// </b><br>
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////<br>
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////<br>
+ 
+</body>
+</html>
+

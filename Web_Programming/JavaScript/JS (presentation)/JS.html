@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Some Title</title>
+    <style>
+        #pic_1 {
+        height: 5em;
+        width: 5em;
+      }
+      #i2 {
+        height: 6em;
+        width: 6em;
+      }
+      #outputKeys {
+          color: red;
+          font-size: 20px;
+      }
+      td, th, tr {
+            border: 2px dashed green;
+        }
+    </style>
+</head>
+<body>
+    <a name="anc1">anchor 1</a><br>
+    <a name="anc2">anchor 2</a><br>
+    <a name="anc3">anchor 3</a><br>
+    <a name="anc4">anchor 4</a><br>
+
+    <form action="" id='f1' name="form_1">
+        <input type="text" value=""><br>
+        <input type="text" value=""><br>
+    </form>
+    <form action="" id='f2'>
+        <input type="text" value=""><br>
+        <input type="text" value=""><br>
+    </form>
+
+    <!-- картинки -->
+    <img id="pic_1" src="https://klike.net/uploads/posts/2019-03/medium/1551512888_2.jpg" alt="asd">
+    <img id="i2" src="https://klike.net/uploads/posts/2019-03/medium/1551512888_2.jpg" alt="ads">
+    <br>
+
+    <a href="link1" id="Link_1">link 1</a><br>
+    <a href="link2">link 1</a><br>
+    <a href="link3">link 1</a><br>
+    <a href="link4">link 1</a><br>
+    <a href="link5">link 1</a><br>
+    <a href="link6">link 6</a><br>
+    <a href="link7">link 7</a><br>
+    <a href="link8">link 8</a><br>
+    <a href="link9">link 9</a><br>
+    <a href="link10">link 10</a><br>
+    <!-- Scripts -->
+    <!-- Scripts -->
+    <!-- Scripts -->
+    <br><br><br>
+    //////////////////////////////////////////////////////////////////////
+    <script>
+        // 1.1
+        document.write("<p id='Hello'>Hello World</p>");
+        // 1.2
+        let p = document.createElement('p');
+        p.id = 'FormatedText';
+        p.style.color = "#F23456";
+        p.style.fontSize = "25px";
+        p.innerHTML = "Formated Text";
+        document.getElementsByTagName('body')[0].appendChild(p);
+        // 1.3
+        document.writeln('Number of anchors = '+ document.anchors.length + '<br>');
+        // 1.4
+        document.writeln('InnerHTML of first anchor = '+ document.anchors[0].innerHTML+ '<br>');
+        // 1.5
+        document.writeln('Number of forms = '+ document.forms.length+ '<br>');
+        // 1.6
+        document.writeln('Name of first form = '+ document.forms[0].name+ '<br>');
+        // 1.7
+        document.writeln('Num of pics = '+ document.images.length+ '<br>');
+        // 1.8
+        document.writeln('Id of first img = '+ document.images[0].id+ '<br>');
+        // 1.9
+        document.writeln('Num of links = '+ document.links.length+ '<br>');
+        // 1.10
+        document.writeln('Id of first link = '+ document.links[0].id+ '<br>');
+        // 1.11
+        document.writeln('Domain = '+ window.location.hostname+ '<br>');
+        // 1.12
+        document.writeln('URL = '+ document.location+ '<br>');
+        // 1.13
+        document.writeln('title = '+ document.title+ '<br>');
+        // 1.14
+        document.writeln('Full URL = '+ document.location+ '<br><br>');
+        document.writeln("////////////Button////////////////Button///////<br><br>")
+        // 2
+        let form = document.createElement('form');
+        form.id = "taskTwoForm";
+        let button = document.createElement('button');
+        button.innerHTML = "Btn_in_a_form"
+        button.name = "MyBtn";
+        button.type = "button";
+        button.id = "Btn1";
+
+        // 2.1
+        button.onclick = function(){
+            this.disabled = true;
+        }
+
+        form.appendChild(button);
+        document.getElementsByTagName('body')[0].appendChild(form);
+        document.getElementsByTagName('body')[0].appendChild(document.createElement('br'));
+
+        // 2.2
+        document.writeln('Name of btn = '+ document.getElementById('Btn1').name+ '<br>');
+        // 2.3
+        document.writeln('Type of btn = '+ document.getElementById('Btn1').type+ '<br>');
+        // 2.4
+        document.writeln('text of btn = '+ document.getElementById('Btn1').innerHTML+ '<br>');
+        //2.5
+        document.writeln('Id of Form of btn = '+ document.getElementById('Btn1').parentNode.id+ '<br><br>');
+
+        document.writeln("////////////Form////////////////Form///////<br><br>");
+
+        // 3
+        // создаем форму
+        let formTask = document.createElement('form');
+        formTask.id = 'formTask';
+        formTask.action = "/script.php";
+        formTask.enctype = 'text/plain';
+        formTask.method = "POST";
+        formTask.name = "MyForm";
+        let input = document.createElement('input');
+        input.type = "text";
+        input.placeholder = "SomeText";
+        input.value = "abc";
+        formTask.appendChild(input);
+        formTask.appendChild(document.createElement('br'));
+        input = document.createElement('input');
+        input.type = "password";
+        input.placeholder = "password";
+        input.value = "SomeValue";
+        formTask.appendChild(input);
+        formTask.appendChild(document.createElement('br'));
+        document.getElementsByTagName('body')[0].appendChild(formTask);
+        // 3.1 show value
+        let inputs = document.getElementById('formTask').getElementsByTagName('input');
+        for (let i =0; i<inputs.length; ++i){
+            document.write('input['+ i + '] value is ' + inputs[i].value + ';<br>');
+        }
+        // 3.2 action
+        document.write('action: ' + document.getElementById('formTask').action + '<br>');
+        // 3.3
+        document.write('enctype: ' + document.getElementById('formTask').enctype + '<br>');
+        // 3.4 
+        document.write('Num of elements: ' + document.getElementById('formTask').getElementsByTagName('input').length + '<br>');
+        // 3.5
+        document.write('method: ' + document.getElementById('formTask').method + '<br>');
+        // 3.6
+        document.write('Name of Form: ' + document.getElementById('formTask').name + '<br>');
+        // 3.7 reset
+        document.write('here will be done reset <br>');
+        document.getElementById('formTask').reset();
+        // 3.8 request
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://example.com/1.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        //xhr.send('name=' + inputs[0].value + '&pswd=' + inputs[1].value);
+
+        document.write('/////////////////////////IMAGE////////////////////////<br><br>');
+        // 4 image
+        // add image
+        let img = document.createElement('img');
+        img.src = 'https://klike.net/uploads/posts/2019-03/medium/1551512888_2.jpg';
+        img.alt = "Nope";
+        img.height = "100";
+        img.id = "MyImage";
+        img.name = "Rocket";
+        document.getElementsByTagName('body')[0].appendChild(img);
+        document.getElementsByTagName('body')[0].appendChild(document.createElement('br'));
+        //4.1 
+        img = document.getElementById('MyImage');
+        img.style.marginLeft = '45%';
+        // 4.2
+        document.write('alt text = ' + img.alt + '<br>');
+        // 4.3
+        img.style.border = "5px solid green";
+        // 4.4
+        img.height = '50';
+        img.width = '40';
+        // 4.5
+        document.write('name = ' + img.name + '<br>');
+        // 4.6
+       // img.src = 'new src';
+
+    </script>
+    <br>
+    //////////EVENT////////////EVENT////////////EVENT////////////<br>
+    <br>
+    <p style="color: blue; font-size: 2em;">Press keys on the keyboard to see what the KeyboardEvent's key and code
+            values are for each one.</p>
+    <div id="WhichMouseBtn"></div>       
+    <div id="outputKeys"></div>
+    <div id="outputClicks"></div>
+    <div id="eventType"></div>
+    <script>
+        // 5.1 which mouse btn pressed
+        document.addEventListener('mousedown', function(event) {
+            let str = "";
+            switch (event.which) {
+        case 1:
+           str = 'Left Mouse button pressed.';
+            break;
+        case 2:
+            str = 'Middle Mouse button pressed.';
+            break;
+        case 3:
+            str = 'Right Mouse button pressed.';
+            break;
+        default:
+            str = 'You have a strange Mouse!';
+         }
+            document.getElementById("WhichMouseBtn").innerHTML = str;
+            str = 'event type  = ' + event.type + '; <br>';
+            document.getElementById("eventType").innerHTML = str;
+        }, true); 
+
+
+        // KeyBoard Listener
+        document.addEventListener("keydown", function(event) {
+            let str = "KeyboardEvent: key='" + event.key + "' | code='" +event.code + "' <br>";    
+            document.getElementById("outputKeys").innerHTML = str;
+            str = 'event type  = ' + event.type + '; <br>';
+            document.getElementById("eventType").innerHTML = str;
+        }, true);
+
+        document.addEventListener("keyup", function(event) {
+           let str = 'event type  = ' + event.type + '; <br>';
+            document.getElementById("eventType").innerHTML = str;
+        }, true);
+        // mouse listener coordinates
+
+        document.addEventListener('click', function(event) {
+            let str = "MouseEvent Coordinates page: X='" + event.clientX+ "' | Y='" + event.clientY + "' <br>";  
+            str += "MouseEvent Cordinates screen: X='" + event.screenX+ "' | Y='" + event.screenY + "' <br>";  
+            str += 'target  = ' + event.target + '; <br>';
+            document.getElementById("outputClicks").innerHTML = str;
+            str = 'event type  = ' + event.type + '; <br>';
+            document.getElementById("eventType").innerHTML = str;
+
+        }, true); 
+    </script>
+
+<br>
+/////////TABLE////////////TABLE///////////TABLE////////////<br>
+<table>
+    <tr>
+    <th colspan="3">
+        Header
+    </th>
+    </tr>
+    <tr>
+        <td>Content1</td>
+        <td>Content1</td>
+        <td>Content1</td>
+    </tr>
+    <tr>
+        <td>Content2</td>
+        <td>Content2</td>
+        <td>Content2</td>
+    </tr>
+    <tr>
+        <td>Content3</td>
+        <td>Content3</td>
+        <td>Content3</td>
+    </tr>
+</table>
+
+<script>
+    let table =document.getElementsByTagName('table')[0];
+    // 6.1
+    table.style.border = "3px";
+    // 6.2
+    table.cellPadding = '15px';
+    table.cellSpacing = '20px';
+    // 6.3
+    table.style.border = "3px solid black";
+    // 6.4
+    table.getElementsByTagName('th')[0].innerHTML = "new header";
+    // 6.5
+    table.getElementsByTagName('tr')[2].remove();
+    // 6.6
+    let tr = document.createElement('tr');
+    for (let i =0; i <3;i++){
+        let td = document.createElement('td');
+        td.innerHTML = 'New Cell';
+        tr.appendChild(td);
+    }
+    table.appendChild(tr);
+    // 6.7
+    table.style.alignContent = 'center';
+    table.style.verticalAlign = 'center';
+    // 6.8
+    for (let i = 0; i < table.getElementsByTagName('tr').length; i++){
+        let tr = table.getElementsByTagName('tr')[i];
+        tr.style.alignContent = 'center';
+    }
+    // 6.9
+    table.getElementsByTagName('tr')[2].children[0].innerHTML = "New Text";
+    // 6.9
+    table.getElementsByTagName('tr')[2].getElementsByTagName('td')[0].colSpan = '2';
+    </script>
+<br>
+</body>
+</html>
