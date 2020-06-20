@@ -1,2 +1,2 @@
 #### Problems from https://acm.timus.ru
-#### String/Substrings
+#### Strings/Substrings
