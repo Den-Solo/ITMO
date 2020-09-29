@@ -1,0 +1,42 @@
+/var/log/syslog.1:Sep 13 00:04:52 ubuntu kernel: [ 2989.684534] Out of memory: Killed process 10268 (m) total-vm:1026492kB, anon-rss:1023976kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:2044kB oom_score_adj:0
+/var/log/syslog.1:Sep 13 00:28:27 ubuntu kernel: [  607.311313] Out of memory: Killed process 2669 (m) total-vm:922492kB, anon-rss:920084kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:1840kB oom_score_adj:0
+/var/log/syslog.1:Sep 13 23:03:56 ubuntu kernel: [ 1166.877498] Out of memory: Killed process 3624 (mb) total-vm:752176kB, anon-rss:749668kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:1508kB oom_score_adj:0
+/var/log/syslog.1:Sep 13 23:10:06 ubuntu kernel: [ 1536.684841] Out of memory: Killed process 4089 (mb) total-vm:1467348kB, anon-rss:1328840kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:2904kB oom_score_adj:0
+/var/log/syslog.1:Sep 13 23:12:41 ubuntu kernel: [ 1691.939312] Out of memory: Killed process 4272 (mb) total-vm:1473968kB, anon-rss:1357460kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:2920kB oom_score_adj:0
+/var/log/syslog.1:Sep 13 23:25:57 ubuntu kernel: [  422.839734] Out of memory: Killed process 2319 (mb) total-vm:1556644kB, anon-rss:1432128kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:3080kB oom_score_adj:0
+/var/log/syslog.1:Sep 13 23:58:35 ubuntu kernel: [  244.289439] Out of memory: Killed process 2302 (mb) total-vm:1572580kB, anon-rss:1441448kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:3116kB oom_score_adj:0
+/var/log/kern.log:Sep 13 00:04:52 ubuntu kernel: [ 2989.684534] Out of memory: Killed process 10268 (m) total-vm:1026492kB, anon-rss:1023976kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:2044kB oom_score_adj:0
+/var/log/kern.log:Sep 13 00:28:27 ubuntu kernel: [  607.311313] Out of memory: Killed process 2669 (m) total-vm:922492kB, anon-rss:920084kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:1840kB oom_score_adj:0
+/var/log/kern.log:Sep 13 23:03:56 ubuntu kernel: [ 1166.877498] Out of memory: Killed process 3624 (mb) total-vm:752176kB, anon-rss:749668kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:1508kB oom_score_adj:0
+/var/log/kern.log:Sep 13 23:10:06 ubuntu kernel: [ 1536.684841] Out of memory: Killed process 4089 (mb) total-vm:1467348kB, anon-rss:1328840kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:2904kB oom_score_adj:0
+/var/log/kern.log:Sep 13 23:12:41 ubuntu kernel: [ 1691.939312] Out of memory: Killed process 4272 (mb) total-vm:1473968kB, anon-rss:1357460kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:2920kB oom_score_adj:0
+/var/log/kern.log:Sep 13 23:25:57 ubuntu kernel: [  422.839734] Out of memory: Killed process 2319 (mb) total-vm:1556644kB, anon-rss:1432128kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:3080kB oom_score_adj:0
+/var/log/kern.log:Sep 13 23:58:35 ubuntu kernel: [  244.289439] Out of memory: Killed process 2302 (mb) total-vm:1572580kB, anon-rss:1441448kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:3116kB oom_score_adj:0
+/var/log/kern.log:Sep 14 00:01:07 ubuntu kernel: [  396.815086] Out of memory: Killed process 2473 (mb) total-vm:1576528kB, anon-rss:1464228kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:3120kB oom_score_adj:0
+/var/log/kern.log:Sep 14 00:02:37 ubuntu kernel: [  486.598241] Out of memory: Killed process 2552 (mb) total-vm:1545868kB, anon-rss:1442628kB, file-rss:8kB, shmem-rss:0kB, UID:1000 pgtables:3060kB oom_score_adj:0
+/var/log/kern.log:Sep 14 00:03:13 ubuntu kernel: [  521.882998] Out of memory: Killed process 2601 (mb) total-vm:1501780kB, anon-rss:1410916kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:2972kB oom_score_adj:0
+/var/log/kern.log:Sep 14 00:04:58 ubuntu kernel: [  627.687894] Out of memory: Killed process 1568 (gnome-shell) total-vm:4670204kB, anon-rss:994276kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:3328kB oom_score_adj:0
+/var/log/kern.log:Sep 14 00:09:54 ubuntu kernel: [  243.139382] Out of memory: Killed process 2113 (mb) total-vm:1641640kB, anon-rss:1466540kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:3248kB oom_score_adj:0
+/var/log/kern.log:Sep 14 06:04:14 ubuntu kernel: [  923.748410] Out of memory: Killed process 3006 (mb) total-vm:1041828kB, anon-rss:1038296kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:2072kB oom_score_adj:0
+/var/log/syslog:Sep 14 00:01:07 ubuntu kernel: [  396.815086] Out of memory: Killed process 2473 (mb) total-vm:1576528kB, anon-rss:1464228kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:3120kB oom_score_adj:0
+/var/log/syslog:Sep 14 00:02:37 ubuntu kernel: [  486.598241] Out of memory: Killed process 2552 (mb) total-vm:1545868kB, anon-rss:1442628kB, file-rss:8kB, shmem-rss:0kB, UID:1000 pgtables:3060kB oom_score_adj:0
+/var/log/syslog:Sep 14 00:03:13 ubuntu kernel: [  521.882998] Out of memory: Killed process 2601 (mb) total-vm:1501780kB, anon-rss:1410916kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:2972kB oom_score_adj:0
+/var/log/syslog:Sep 14 00:04:58 ubuntu kernel: [  627.687894] Out of memory: Killed process 1568 (gnome-shell) total-vm:4670204kB, anon-rss:994276kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:3328kB oom_score_adj:0
+/var/log/syslog:Sep 14 00:09:54 ubuntu kernel: [  243.139382] Out of memory: Killed process 2113 (mb) total-vm:1641640kB, anon-rss:1466540kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:3248kB oom_score_adj:0
+/var/log/syslog:Sep 14 00:23:32 ubuntu gnome-shell[2396]: /bin/bash: egrep -i -r 'killed process' /var/log/: No such file or directory
+/var/log/syslog:Sep 14 06:04:14 ubuntu kernel: [  923.748410] Out of memory: Killed process 3006 (mb) total-vm:1041828kB, anon-rss:1038296kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:2072kB oom_score_adj:0
+/var/log/syslog:Sep 14 06:07:39 ubuntu gnome-shell[3244]: /bin/bash: egrep -i -r 'killed process' /var/log/: No such file or directory
+/var/log/kern.log.1:Sep 12 23:55:05 ubuntu kernel: [ 2394.864049] Out of memory: Killed process 8008 (code) total-vm:437588kB, anon-rss:2068kB, file-rss:0kB, shmem-rss:11932kB, UID:1000 pgtables:664kB oom_score_adj:200
+/var/log/kern.log.1:Sep 12 23:55:05 ubuntu kernel: [ 2403.146445] Out of memory: Killed process 9060 (m) total-vm:523104kB, anon-rss:520644kB, file-rss:4kB, shmem-rss:0kB, UID:1000 pgtables:1060kB oom_score_adj:0
+Binary file /var/log/auth.log.1 matches
+/var/log/auth.log:Sep 13 00:05:28 ubuntu sudo:     user : TTY=pts/0 ; PWD=/home/user/Desktop ; USER=root ; COMMAND=/usr/bin/egrep -i -r killed process /var/log/
+/var/log/auth.log:Sep 13 00:12:11 ubuntu sudo:     user : TTY=pts/0 ; PWD=/home/user/Desktop ; USER=root ; COMMAND=/usr/bin/egrep -i -r killed process /var/log/
+/var/log/auth.log:Sep 13 00:29:39 ubuntu sudo:     user : TTY=pts/1 ; PWD=/home/user/Desktop ; USER=root ; COMMAND=/usr/bin/egrep -i -r killed process /var/log/
+Binary file /var/log/journal/b1ff0787765a414483171fc1d5e5a2bb/system@d2cf1ba758464419a443a466b7fe5a75-0000000000001bf7-0005af00cced4d5f.journal matches
+Binary file /var/log/journal/b1ff0787765a414483171fc1d5e5a2bb/system@5ce1c4c41854455fa7bcbdc90c911bb9-000000000004b200-0005af40ac787b9e.journal matches
+Binary file /var/log/journal/b1ff0787765a414483171fc1d5e5a2bb/user-1000@6308a4c3ace24ee183d03c780c6245f0-0000000000001c63-0005af00cd0c45f3.journal matches
+Binary file /var/log/journal/b1ff0787765a414483171fc1d5e5a2bb/user-1000@5781917f2e4a4cedaf66b9c4689ecbc5-000000000004c0c8-0005af40dc577674.journal matches
+Binary file /var/log/journal/b1ff0787765a414483171fc1d5e5a2bb/user-1000.journal matches
+Binary file /var/log/journal/b1ff0787765a414483171fc1d5e5a2bb/system@5ce1c4c41854455fa7bcbdc90c911bb9-0000000000049e9e-0005af4083ec7098.journal matches
+Binary file /var/log/journal/b1ff0787765a414483171fc1d5e5a2bb/system@5ce1c4c41854455fa7bcbdc90c911bb9-0000000000004ed3-0005af3f89854357.journal matches
+Binary file /var/log/journal/b1ff0787765a414483171fc1d5e5a2bb/system.journal matches

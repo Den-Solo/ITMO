@@ -1,0 +1,4 @@
+Total Virtual Mem = 3071 MB
+Cur Used Virtual Mem = 704 MB
+Total Physical Mem = 2047 MB
+Cur Used Physical Mem = 623 MB

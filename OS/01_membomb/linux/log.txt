@@ -1,0 +1,5 @@
+Swap = 687 MB
+Total Virtual Mem = 2647 MB
+Cur Used Virtual Mem = 1931 MB
+Total Physical Mem = 1959 MB
+Cur Used Physical Mem = 1832 MB
