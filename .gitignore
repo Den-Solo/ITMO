@@ -7,6 +7,7 @@
 *.sln.docstates
 *.vcxproj
 *.exe
+*.csv
 
 # Build results
 
