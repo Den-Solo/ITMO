@@ -171,7 +171,7 @@ std::wregex Filter::BuildRegex(const std::vector<std::wstring>& data)
     std::wstring reg_str;
     reg_str.reserve(100);
 
-    for (auto i = 0; i < data.size(); ++i) {
+    for (size_t i = 0; i < data.size(); ++i) {
         if (i != 0)
             reg_str += L'|';
         reg_str += WildcardToRegex(data[i]);

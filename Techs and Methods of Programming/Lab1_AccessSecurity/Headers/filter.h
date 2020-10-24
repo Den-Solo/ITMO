@@ -35,7 +35,7 @@ private:
     std::unordered_set<std::wstring_view> blocked_files_;
 
     std::wregex regex_;
-    FILETIME start_dyn_check_ { 0 };
+    FILETIME start_dyn_check_ {};
 
     std::atomic_bool bExit_ { false };
     std::future<void> fDynCheck_;
