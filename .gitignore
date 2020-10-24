@@ -11,7 +11,8 @@
 _*
 *.sln
 .vs
-
+*.pro
+build*
 
 # Build results
 
