@@ -2,7 +2,6 @@
 
 #include <Windows.h>
 #include <future>
-#include <iostream>
 #include <mutex>
 #include <string>
 #include <list>
