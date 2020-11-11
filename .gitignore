@@ -11,6 +11,7 @@
 _*
 *.sln
 .vs
+.temp
 *.pro
 build*
 

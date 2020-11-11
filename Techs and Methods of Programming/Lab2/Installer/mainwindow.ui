@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>453</width>
+    <height>342</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>MyInstaller</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>451</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="p1_path">
+     <widget class="QLineEdit" name="le_title_folder">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 0px;
+background-color: rgba(0,0,0,0);
+color:black;</string>
+      </property>
+      <property name="text">
+       <string>Выбор папки установки</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="le_file_path">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>80</y>
+        <width>391</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>C:\Users\User\AppData\Local\Programs\TrialProg</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="le_title_path">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>50</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 0px;
+background-color: rgba(0,0,0,0);
+color:black;</string>
+      </property>
+      <property name="text">
+       <string>Путь:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_search">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>110</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Обзор</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="p2_addons">
+     <widget class="QLineEdit" name="le_add_choice">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>221</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 0px;
+background-color: rgba(0,0,0,0);
+color:black;</string>
+      </property>
+      <property name="text">
+       <string>Выберите дополнительные задачи:</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cb_create_desktop_sc">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>200</y>
+        <width>201</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Создать значок на рабочем столе</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="le_title_type">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 0px;
+background-color: rgba(0,0,0,0);
+color:black;</string>
+      </property>
+      <property name="text">
+       <string>Выберите версию:</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="rb_launches">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>191</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ограничение по числу запусков</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">LimitType</string>
+      </attribute>
+     </widget>
+     <widget class="QRadioButton" name="rb_time">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>181</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ограничение по времени</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">LimitType</string>
+      </attribute>
+     </widget>
+     <widget class="QCheckBox" name="cb_create_startup_sc">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>230</y>
+        <width>191</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Создать ярлык в меню пуск</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="p3_install">
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 0px;
+background-color: rgba(0,0,0,0);
+color:black;</string>
+      </property>
+      <property name="text">
+       <string>Все готово к установке</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 0px;
+background-color: rgba(0,0,0,0);
+color:black;</string>
+      </property>
+      <property name="text">
+       <string>Путь:</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="te_path">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>100</y>
+        <width>391</width>
+        <height>151</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="gb_bottom">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>280</y>
+      <width>471</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: gray;</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="pb_cancel">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>20</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;</string>
+     </property>
+     <property name="text">
+      <string>Отмена</string>
+     </property>
+     <property name="shortcut">
+      <string>Del</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_next">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>20</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;</string>
+     </property>
+     <property name="text">
+      <string>Далее</string>
+     </property>
+     <property name="shortcut">
+      <string>Right</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_back">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>20</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;</string>
+     </property>
+     <property name="text">
+      <string>Назад</string>
+     </property>
+     <property name="shortcut">
+      <string>Left</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="LimitType"/>
+ </buttongroups>
+</ui>
